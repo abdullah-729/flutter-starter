@@ -6,13 +6,7 @@ class TaskListViewModel {
 
   TaskListViewModel(this.repository);
 
-  Future<List<Task>> fetchTasks() async {
-    try {
-      return await repository.getAllTasks();
-    } catch (e) {
-      throw Exception("Error fetching tasks: $e");
-    }
-  }
+  Stream<List<Task>> get tasksStream => repository.getAllTasksStream();
 
   Future<void> deleteTask(Task task) async {
     try {

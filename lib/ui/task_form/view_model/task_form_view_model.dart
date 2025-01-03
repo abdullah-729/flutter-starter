@@ -14,4 +14,13 @@ class TaskFormViewModel {
       throw Exception("Error adding task: $e");
     }
   }
+
+  // Future<void> updateTask(Task task, String title, String description) async {
+  //   try {
+  //     repository.updateTask(task,
+  //         title: title, description: description, isComplete: false);
+  //   } catch (e) {
+  //     throw Exception("Error updating task: $e");
+  //   }
+  // }
 }

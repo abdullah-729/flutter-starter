@@ -12,8 +12,8 @@ class TaskListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Tasks")),
-      body: FutureBuilder<List<Task>>(
-        future: viewModel.fetchTasks(),
+      body: StreamBuilder<List<Task>>(
+        stream: viewModel.tasksStream,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
